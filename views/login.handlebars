@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+<link rel="stylesheet" href="/css/{{style}}">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>    <!-- CSS-->
+
+
+<title>Connexion</title> 
+<body>
+
+ <div class="back">
+     
+        {{> messages}}
+        <section id="contenneurform">
+                       
+                               
+                                 <button class="waves-effect waves-light active" id="login">Connexion</button>
+                                <div style="clear: both;"></div>
+                                <button class="waves-effect waves-light" id="register" > <a href="/users/register"> Mot de passe oublier?</a></button>
+                              
+                              
+                             
+                          
+                            <form class="col s12 container" action="/users/login" method="post">
+                                    <h1>Connexion</h1>
+                                    <form class="form" >
+                                        <input class="inputanimation" type="text" placeholder="Nom utilisateur" name="email">
+                                        <input class="inputanimation" type="password" placeholder="Mot de passe" name="password">
+                                        <button class="bouttonanimation" type="submit" id="login-button">Connexion</button>
+                                        <div class="remember">
+                                                <input type="checkbox" name="rem" id="rem">
+                                              <label for="rem">Se souvenir de moi</label>
+                                                <div style="clear: both;"></div>
+                                               
+                                        </div>
+                                    </form>
+                                    <ul class="animate">
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                            
+                            </form>
+                          
+                            
+                         
+                        
+                        </section>
+              
+                        <ul class="bg-bubbles">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                        </ul>
+                        </div>
+
+ </div>
+
+</body>
+
+</html>

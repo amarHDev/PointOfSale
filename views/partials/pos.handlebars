@@ -1,0 +1,125 @@
+
+<div class="container">
+<div class="row " id="prod">
+ <div class="col-lg-6 d1">
+    <div class="contact-form">
+				<div class="form-group" >
+				  <div class="col-sm-10"> 
+				   <div class="input-group">                   
+					<input style="background-color:#FFFFFF;" type="text" class="form-control"  readonly="readonly" value="client non enregistrer" name="fname">
+				    <a href="#myModal" data-toggle="modal" class="btn btn-info" type="submit"><i class="fa fa-plus-circle"></i></a>
+                   </div>
+				  </div>
+				</div>
+				<div class="form-group" >
+				  <div class="col-sm-10">          
+					<input type="text" class="form-control" id="scannFilter" placeholder="Entrer ou scanner le code bare" name="lname">
+				  </div>
+				</div>
+ <!-- ticket début-->
+			 <div class="tab-content">
+                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel">
+
+                 	<!--site internet-->
+                    <section class="container content-section">
+
+					<h2 class="section-header">Ticket</h2>
+					<div class="cart-row">
+						<span class="cart-item cart-header cart-column">Produit</span>
+						<span class="cart-price cart-header cart-column">Prix</span>
+						<span class="cart-quantity cart-header cart-column" >Qty</span>
+					</div>
+           
+                   </section>
+                    <!--fin-->
+                 </div>
+			 </div>
+<!-- ticket fin-->
+              
+              <div class="cart-items">
+              </div>
+                <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">0DA</span>
+                </div>
+
+				<div style="margin-top:3%;" class="sam">        
+					<button style="width:28%" type="submit" class="btn btn-info btn-md" onclick="window.print(); return false;"target="_blank" style="cursor: pointer;"><i class="fa fa-print"></i>&nbsp;Imprimer</button>
+					<button style="width:28%; margin-left:5%;" type="submit" class="btn btn-success btn-purchase btn-md"><i class="fa fa-download"></i>&nbsp;Enregistrer</button>
+					<button style="width:28%; margin-left:5%;" type="submit" class="btn btn-danger btn-md" onclick='location.href="dashboard"'><i class="fa fa-times-circle"></i>&nbsp;Annuler</button>
+				</div>
+			</div>  
+
+ </div>
+ <div class="col-lg-offeset-1 col-lg-5">
+                <div class="form-group" id="enderSearch">
+				  <div style="margin-left:8%" class="col-sm-10"> 
+				   <div class="input-group">                   
+					<input type="text" class="form-control" placeholder="Entrer nom produit" name="fname" id="categoryFilter">
+				    <button class="btn btn-info" type="submit"><i class="fa fa-search "></i></button>
+                   </div>
+				  </div>
+               </div>
+			   
+  <div class="row filter" id="print">
+	
+
+	  
+	    {{#each produit  }}
+	 <div class="col-lg-2 marg1 ">
+                    <span class="shop-item-title hid">{{nom}}</span>
+                    <img style="width: 90px; height: 90px;" class="shop-item-image" src="{{{image}}}">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price hid">{{prix}}</span>
+                        <button class="btn btn-primary shop-item-button " style="margin-top:100%; width:90px;"  type="button"><span id="span1">{{nom}}</span><span id="span2" style="display: none;">{{reference}}</span></button>
+                    </div>
+    </div>
+	  {{/each}}
+   
+	
+		 
+
+
+                   
+	
+	
+  </div>
+  			   
+ </div>
+ 
+</div>
+</div>
+
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-login">
+		<div class="modal-content">
+			<div class="modal-header">			
+				<h4 class="modal-title">Nouveau client</h4>	
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i style="color:#CC3300" class="fa fa-times"></i></button>
+			</div>
+			<div class="modal-body">
+				<form action="/examples/actions/confirmation.php" method="post">
+					<div class="form-group">
+						<input type="text" class="form-control" name="username" placeholder="num carte" required="required">		
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="name" required="required">	
+					</div>    
+					<div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="prenom" required="required">	
+					</div>  
+					<div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="adresse" required="required">	
+					</div>      
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Enregistrer</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>     
+</div>
+
+
+<script src="js/pos.js"></script>

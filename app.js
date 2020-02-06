@@ -1,0 +1,71 @@
+const express = require("express");
+const exphbs = require("express-handlebars");
+const bodyParser = require("body-parser");
+const session = require("express-session");
+const flash = require("connect-flash");
+const passport = require("passport");
+const app = new express();
+const routes = require('./routes/handlers');
+const routesUser = require("./routes/users");
+const methodOverride = require("method-override");
+
+const port = 8000;
+
+
+//body parser
+//configure session and flash
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(methodOverride("_method"));
+
+
+app.use(
+  session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true
+  })
+);
+// incude passpor
+require("./config/passport");
+// add passport
+app.use(passport.initialize());
+app.use(passport.session());
+//configure passport
+app.use(flash());
+// add middleware for flash messages
+
+app.use((req, res, next) => {
+  res.locals.successMessage = req.flash("successMessage");
+  res.locals.errorMessage = req.flash("errorMessage");
+  res.locals.error = req.flash("error");
+
+  if (req.user) {
+    res.locals.user = req.user;
+  }
+  next();
+});
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+
+app.use(express.static('public'));
+
+// create a view enginge
+app.engine(
+    "handlebars",
+    exphbs({
+      defaultLayout: null ,
+    })
+);
+app.set("view engine", "handlebars");
+
+
+app.use('/', routes);
+app.use("/users", routesUser);
+
+
+app.listen(port, () => {
+    console.log(` The server started at port ${port} `);
+});

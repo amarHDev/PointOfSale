@@ -1,0 +1,6 @@
+/*nav bar css*/
+.search-bar { right: 0; top: 0; }
+.search-bar input { font-size: 18px; padding: 0; }
+.search-bar input:focus { outline: 0; -webkit-box-shadow: none; box-shadow: none; }
+
+/*side menu css*/

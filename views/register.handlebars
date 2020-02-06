@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+<link rel="stylesheet" href="/css/login.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>    <!-- CSS-->
+
+
+<title>Connexion</title> 
+<body>
+
+ <div class="back">
+     
+        {{> messages}}
+          <div class="back">
+                   
+             
+                
+                        <section id="contenneurform">
+                       
+                           
+                              
+                             
+                          
+                            
+                            
+                            <form class="col s12 container2"  action="/users/register" method="post">
+                                <button> <a href="/users/login">Connexion</a></button>
+                                    {{#if errors}}       <!--si y'a des erreur -->
+                    {{#each errors}}   <!--on affiche chaque erreur dans un div  //  c'est un array -->   
+                        <div style="height: 20px; width:100%; background:red; color:white;">{{msg}}</div>
+                    {{/each }}
+                 {{/if}}
+                    
+                                    <h1>Réinitialisation</h1>
+                                   
+                                    <form class="form" >
+                                        <input class="inputanimation" type="Email" placeholder="Entrer votre Email" name="email">
+                                        <input class="inputanimation" type="password" placeholder="Taper votre mot de passe" name="password">
+                                        <input class="inputanimation" type="password" placeholder="confirmer votre mot de passe" name="password2">
+                                        <button class="bouttonanimation" type="submit" id="login-button">Valider</button>
+                                    </form>
+                                    <ul class="animate">
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                            </form
+                         
+                        
+                        </section>
+              
+                        <ul class="bg-bubbles">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                        </ul>
+                        </div>
+              
+ </div>
+
+</body>
+
+</html>

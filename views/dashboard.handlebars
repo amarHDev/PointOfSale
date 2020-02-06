@@ -1,0 +1,83 @@
+<html lang="fr" ng-app="routeapp">
+<head>
+<meta name="viewport" content="text/html; charset=iso-8859-1">
+<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="css/dashboard.css" rel="stylesheet">
+<link href="css/pos.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<script src="js/angular.js"></script>
+<script src="js/route.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/caisse.js"></script>
+
+<title>{{{title}}}</title>
+</head>
+
+
+<body>
+<!-- navbar début-->
+<nav class="navbar navbar-expand bg-success position-relative shadow-sm">
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+	    <ul class="navbar-nav" style="margin-left:0%">
+			<li class="nav-item">
+	          <a id="#" class="btn text-white button-left button-right"><span class="fa fa-align-justify fa-2x"></span></a>
+			</li>
+		</ul>
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item">
+				<a class="nav-link text-white"><span id="date_heure"></span></a>
+			</li>
+		</ul>
+		<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+			<li class="nav-item">
+        
+				<a class="nav-link text-white" href="/users/logout"><span class="fa fa-sign-out"></span>Déconnexion</a>
+      
+			</li>
+		</ul>
+	</div>
+</nav>
+<!-- navbar fin -->
+<!-- side menu-->
+<div class="main">
+        <aside>
+          <div class="sidebar left">
+            <div class="user-panel">
+              <div class="pull-left image">
+                <img src="img/logo.png" class="rounded-circle" alt="User Image">
+              </div>
+              <div class="pull-left info">
+                <p>Caisse numéro 1</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              </div>
+            </div>
+
+            <ul class="list-sidebar bg-defoult">
+              <li> <a  href="#!home" class="collapsed" > <i class="fa fa-th"></i> <span class="nav-label">Pos</span></a></li>
+			  
+              <li> <a href="#!produit" class="collapsed"><i class="fa fa-list-alt"></i> <span class="nav-label">list produits</span></a> </li>
+			 
+              <li> <a href="#!vente" class="collapsed" ><i class="fa fa-usd"></i><span class="nav-label">Ventes du jour</span></a></li>
+			
+              <li><a href="#!clients" class="collapsed"><i class="fa fa-users"></i> <span class="nav-label">Clients fidéles</span></a></li>
+		  
+             
+		  
+             
+		   </ul>
+         </div>
+       </aside>	
+</div>
+<div id="D1" style="margin-top:-46%; margin-left:4%; overflow:hidden" ng-view></div>
+
+<!-- side menu fin-->
+
+		 
+{{> pos}}
+  
+</body>
+</html>
+<script type="text/javascript">window.onload = date_heure('date_heure');</script>
+
